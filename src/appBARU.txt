@@ -11,23 +11,15 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Switch>
-        <Route exact path='/'>
-          <Home />
-        </Route>
+      <Routes>
+        <Route default path='/' element={<Home />} />
         {/* Halaman About */}
-        <Route path='/about'>
-          <About />
-        </Route>
+        <Route path='/about' element={<About />} />
         {/* Halaman detail produk */}
-        <Route path='/cocktail/:id'>
-          <SingleCocktail />
-        </Route>
+        <Route path='/cocktail/:id' element={<SingleCocktail />} />
         {/* Error Page */}
-        <Route path='*'>
-          <Error />
-        </Route>
-      </Switch>
+        <Route path='*' elemen={<Error />} />
+      </Routes>
     </Router>
   )
 }
